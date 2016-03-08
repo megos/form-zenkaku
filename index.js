@@ -3,8 +3,9 @@ var script = "self.on('click', function(node) {" +
              "  text = text.replace(/[A-Za-z0-9]/g, function(s) {" +
     		 "    return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);" +
     		 "  });" +
-    		 "  text = text.replace(/-/g, '―');" +
-    		 "  document.activeElement.value = text" +
+    		 "  text = text.replace(/-/g, 'ー');" +
+    		 "  text = text.replace(/ /g, '　');" +
+    		 "  document.activeElement.value = text;" +
     		 "});";
 
 var cm = require("sdk/context-menu");
