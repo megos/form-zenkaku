@@ -1,16 +1,16 @@
-// var self = require("sdk/self");
+var script = "self.on('click', function(node) {" +
+             "  var text = document.activeElement.value;" +
+             "  text = text.replace(/[A-Za-z0-9]/g, function(s) {" +
+    		 "    return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);" +
+    		 "  });" +
+    		 "  text = text.replace(/-/g, '―');" +
+    		 "  document.activeElement.value = text" +
+    		 "});";
 
-// // a dummy function, to show how tests work.
-// // to see how to test this function, look at test/test-index.js
-// function dummy(text, callback) {
-//   callback(text);
-// }
+var cm = require("sdk/context-menu");
 
-// exports.dummy = dummy;
-
-var contextMenu = require("sdk/context-menu");
-var menuItem = contextMenu.Item({
-	label: "半角から全角へ変換",
-	context: contextMenu.SelectorContext("input"),
-	contextScriptFile: './convert.js'
+cm.Item({
+  label: "半角から全角へ変換",
+  context: cm.SelectorContext("input"),
+  contentScript: script
 });
