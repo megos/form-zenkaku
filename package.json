@@ -1,8 +1,8 @@
 {
-  "title": "from-zenkaku",
+  "title": "form zenkaku",
   "name": "megos",
   "version": "0.0.1",
-  "description": " 入力フォームで半角から全角にする",
+  "description": "入力フォームで半角文字を全角文字にする",
   "main": "index.js",
   "author": "megos",
   "engines": {
